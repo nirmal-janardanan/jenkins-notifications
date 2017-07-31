@@ -1,0 +1,528 @@
+<workflowJob _class='org.jenkinsci.plugins.workflow.job.WorkflowJob'>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action _class='hudson.plugins.jobConfigHistory.JobConfigHistoryProjectAction'/>
+	<action/>
+	<action/>
+	<action _class='nectar.plugins.rbac.roles.Roles'/>
+	<action/>
+	<action/>
+	<action/>
+	<action _class='com.cloudbees.plugins.credentials.ViewCredentialsAction'/>
+	<description>Builds developer branches</description>
+	<displayName>G3Build-Branch</displayName>
+	<fullDisplayName>G3Build-Branch</fullDisplayName>
+	<fullName>G3Build-Branch</fullName>
+	<name>G3Build-Branch</name>
+	<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/</url>
+	<buildable>true</buildable>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14346</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14346/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14345</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14345/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14344</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14344/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14343</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14343/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14342</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14342/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14341</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14341/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14340</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14340/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14339</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14339/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14338</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14338/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14337</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14337/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14336</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14336/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14335</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14335/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14334</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14334/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14333</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14333/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14332</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14332/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14331</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14331/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14330</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14330/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14329</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14329/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14328</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14328/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14327</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14327/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14326</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14326/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14325</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14325/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14324</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14324/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14323</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14323/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14322</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14322/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14321</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14321/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14320</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14320/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14319</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14319/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14318</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14318/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14317</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14317/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14316</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14316/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14315</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14315/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14314</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14314/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14313</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14313/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14312</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14312/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14311</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14311/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14310</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14310/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14309</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14309/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14308</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14308/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14307</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14307/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14306</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14306/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14305</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14305/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14304</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14304/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14303</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14303/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14302</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14302/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14301</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14301/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14300</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14300/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14299</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14299/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14298</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14298/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14297</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14297/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14296</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14296/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14295</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14295/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14294</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14294/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14293</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14293/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14292</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14292/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14291</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14291/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14290</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14290/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14289</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14289/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14288</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14288/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14287</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14287/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14286</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14286/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14285</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14285/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14284</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14284/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14283</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14283/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14282</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14282/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14281</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14281/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14280</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14280/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14279</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14279/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14278</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14278/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14277</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14277/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14276</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14276/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14275</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14275/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14274</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14274/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14273</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14273/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14272</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14272/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14271</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14271/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14270</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14270/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14269</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14269/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14268</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14268/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14267</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14267/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14266</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14266/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14265</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14265/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14264</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14264/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14263</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14263/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14262</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14262/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14261</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14261/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14260</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14260/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14259</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14259/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14258</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14258/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14257</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14257/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14256</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14256/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14255</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14255/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14254</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14254/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14253</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14253/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14252</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14252/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14251</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14251/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14250</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14250/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14249</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14249/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14248</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14248/</url>
+	</build>
+	<build _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14247</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14247/</url>
+	</build>
+	<color>red_anime</color>
+	<firstBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>13899</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/13899/</url>
+	</firstBuild>
+	<healthReport>
+		<description>Build stability: 4 out of the last 5 builds failed.</description>
+		<iconClassName>icon-health-00to19</iconClassName>
+		<iconUrl>health-00to19.png</iconUrl>
+		<score>20</score>
+	</healthReport>
+	<healthReport>
+		<description>Test Result: 1 test failing out of a total of 12,564 tests.</description>
+		<iconClassName>icon-health-80plus</iconClassName>
+		<iconUrl>health-80plus.png</iconUrl>
+		<score>99</score>
+	</healthReport>
+	<inQueue>false</inQueue>
+	<keepDependencies>false</keepDependencies>
+	<lastBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14346</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14346/</url>
+	</lastBuild>
+	<lastCompletedBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14345</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14345/</url>
+	</lastCompletedBuild>
+	<lastFailedBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14345</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14345/</url>
+	</lastFailedBuild>
+	<lastStableBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14339</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14339/</url>
+	</lastStableBuild>
+	<lastSuccessfulBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14339</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14339/</url>
+	</lastSuccessfulBuild>
+	<lastUnsuccessfulBuild _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+		<number>14345</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Branch/14345/</url>
+	</lastUnsuccessfulBuild>
+	<nextBuildNumber>14347</nextBuildNumber>
+	<property _class='hudson.plugins.buildblocker.BuildBlockerProperty'/>
+	<property _class='jenkins.model.BuildDiscarderProperty'/>
+	<property _class='com.sonyericsson.rebuild.RebuildSettings'/>
+	<property _class='hudson.model.ParametersDefinitionProperty'>
+		<parameterDefinition _class='hudson.model.BooleanParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.BooleanParameterValue'>
+				<name>G3Build</name>
+				<value>true</value>
+			</defaultParameterValue>
+			<description>Enable pipeline integration build stage</description>
+			<name>G3Build</name>
+			<type>BooleanParameterDefinition</type>
+		</parameterDefinition>
+		<parameterDefinition _class='hudson.model.BooleanParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.BooleanParameterValue'>
+				<name>G3Inspect</name>
+				<value>true</value>
+			</defaultParameterValue>
+			<description>Enable pipeline inspection build stage</description>
+			<name>G3Inspect</name>
+			<type>BooleanParameterDefinition</type>
+		</parameterDefinition>
+		<parameterDefinition _class='hudson.model.BooleanParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.BooleanParameterValue'>
+				<name>G3Deploy</name>
+				<value>true</value>
+			</defaultParameterValue>
+			<description>Enable pipeline integration deploy stage</description>
+			<name>G3Deploy</name>
+			<type>BooleanParameterDefinition</type>
+		</parameterDefinition>
+		<parameterDefinition _class='hudson.model.BooleanParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.BooleanParameterValue'>
+				<name>G3Test</name>
+				<value>true</value>
+			</defaultParameterValue>
+			<description>Enable pipeline integration test stage</description>
+			<name>G3Test</name>
+			<type>BooleanParameterDefinition</type>
+		</parameterDefinition>
+		<parameterDefinition _class='hudson.model.BooleanParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.BooleanParameterValue'>
+				<name>G3Publish</name>
+				<value>false</value>
+			</defaultParameterValue>
+			<description>Enable pipeline publish stage, should only enable for release builds</description>
+			<name>G3Publish</name>
+			<type>BooleanParameterDefinition</type>
+		</parameterDefinition>
+		<parameterDefinition _class='hudson.model.StringParameterDefinition'>
+			<defaultParameterValue _class='hudson.model.StringParameterValue'>
+				<name>Branch</name>
+				<value/>
+			</defaultParameterValue>
+			<description>Enable branch name to build, if empty defaults to the gerrit refspec trigger parameter</description>
+			<name>Branch</name>
+			<type>StringParameterDefinition</type>
+		</parameterDefinition>
+	</property>
+	<property _class='hudson.plugins.throttleconcurrents.ThrottleJobProperty'/>
+	<property _class='org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty'/>
+	<concurrentBuild>true</concurrentBuild>
+</workflowJob>
