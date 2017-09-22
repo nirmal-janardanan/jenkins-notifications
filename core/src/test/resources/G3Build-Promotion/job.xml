@@ -1,0 +1,56 @@
+<freeStyleBuild _class='hudson.model.FreeStyleBuild'>
+	<action _class='hudson.model.ParametersAction'>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>Version</name>
+			<value>4.6.10807.e01f506.1cecc9a</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>Message</name>
+			<value/>
+		</parameter>
+	</action>
+	<action _class='hudson.model.CauseAction'>
+		<cause _class='hudson.model.Cause$UserIdCause'>
+			<shortDescription>Started by user ArunPratap Singh</shortDescription>
+			<userId>idnasi</userId>
+			<userName>ArunPratap Singh</userName>
+		</cause>
+	</action>
+	<action/>
+	<action _class='com.cloudbees.plugins.deployer.DeployNowRunAction'>
+		<oneClickDeployPossible>false</oneClickDeployPossible>
+		<oneClickDeployReady>false</oneClickDeployReady>
+		<oneClickDeployValid>false</oneClickDeployValid>
+	</action>
+	<action _class='jenkins.metrics.impl.TimeInQueueAction'/>
+	<action/>
+	<action/>
+	<action _class='hudson.plugins.promoted_builds.PromotedBuildAction'/>
+	<action/>
+	<action/>
+	<action _class='hudson.model.ParametersAction'>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>DESCRIPTION_SETTER_DESCRIPTION</name>
+			<value>4.6.10807.e01f506.1cecc9a</value>
+		</parameter>
+	</action>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<building>false</building>
+	<description>4.6.10807.e01f506.1cecc9a</description>
+	<displayName>#1244</displayName>
+	<duration>19764</duration>
+	<estimatedDuration>17048</estimatedDuration>
+	<fullDisplayName>G3Build-Promotion #1244</fullDisplayName>
+	<id>1244</id>
+	<keepLog>false</keepLog>
+	<number>1244</number>
+	<queueId>5197</queueId>
+	<result>SUCCESS</result>
+	<timestamp>1505886464073</timestamp>
+	<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-Promotion/1244/</url>
+	<builtOn>us1d3ci08</builtOn>
+	<changeSet _class='hudson.scm.EmptyChangeLogSet'/>
+</freeStyleBuild>

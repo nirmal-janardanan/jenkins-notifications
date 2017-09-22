@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Set;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,71 +19,67 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import worktools.jenkins.ui.PreferencesHelper.Settings;
+import worktools.jenkins.models.Settings;
 
 public class SettingsPopupWindow extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = 291100554956339935L;
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 100;
-	private final JTextField ownerTextField;
-	private final JTextField jobCategoryTextField;
-	private final JButton saveButton;
-	private final JButton cancelButton;
+	private final JTextField projectTextField = new JTextField();
+	private final JTextField ownerTextField = new JTextField();
+	private final JTextField jobCategoryTextField = new JTextField();
+	private final JButton saveButton = new JButton("Save");
+	private final JButton cancelButton = new JButton("Cancel");
 	
-	private final JenkinsNotificationsSystemTray notificationsUI;
+	final Set<Settings.SettingsListener> listeners = new CopyOnWriteArraySet<>();
 	
-	public SettingsPopupWindow(JenkinsNotificationsSystemTray notificationsUI) {
+	public SettingsPopupWindow() {
 		
-		this.notificationsUI = notificationsUI;
-		
-		GridLayout entryLayout = new GridLayout(3, 2);
+		createEntryPanel();
+		applyButtonBehaviours();
+		setDefaultValues();
+		setSize(new Dimension(WIDTH, HEIGHT));
+		setTitle("Settings");
+		position();
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		overrideWindowClosingOperation();
+	}
+
+	private void createEntryPanel() {
+		GridLayout entryLayout = new GridLayout(4, 2);
 		
 		JPanel entryPanel = new JPanel();
 		entryPanel.setLayout(entryLayout);
 		
+		entryPanel.add(new JLabel("Project"));
+		entryPanel.add(projectTextField);
+		
 		entryPanel.add(new JLabel("Job Category"));
-		jobCategoryTextField = new JTextField();
 		entryPanel.add(jobCategoryTextField);
 		
 		entryPanel.add(new JLabel("Owner"));
-		ownerTextField = new JTextField();
 		entryPanel.add(ownerTextField);
 		
-		saveButton = new JButton("Save");
 		entryPanel.add(saveButton);
-		
-		cancelButton = new JButton("Cancel");
 		entryPanel.add(cancelButton);
 		
 		entryPanel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		
 		add(entryPanel, BorderLayout.CENTER);
-		
+	}
+	
+	private void position() {
 		pack();
-		
-		applyButtonBehaviours();
-		setValues();
-		setSize(new Dimension(WIDTH, HEIGHT));
-		setTitle("Settings");
-		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(new Point((int)screenSize.getWidth() - WIDTH - 50, (int)screenSize.getHeight() - HEIGHT - 50));
 		this.setAlwaysOnTop(true);
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		
-		addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent we) {
-				System.out.println("window closing");
-				exit();
-			}
-		});
 	}
-	
-	private void setValues() {
-		Settings settings = PreferencesHelper.load();
+
+	private void setDefaultValues() {
+		Settings settings = Settings.load();
 		jobCategoryTextField.setText(settings.getJobCategory());
 		ownerTextField.setText(settings.getOwner());
+		projectTextField.setText(settings.getProject());
 		
 	}
 
@@ -93,24 +91,28 @@ public class SettingsPopupWindow extends JFrame implements ActionListener {
 		
 		cancelButton.addActionListener(e -> exit());
 	}
+	
+	private void overrideWindowClosingOperation() {
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.out.println("window closing");
+				exit();
+			}
+		});
+	}
 
 	public void save() {
 		
-		Settings settings = new Settings(ownerTextField.getText().trim().toLowerCase(), jobCategoryTextField.getText().trim());
-		PreferencesHelper.save(settings);
+		Settings settings = new Settings(projectTextField.getText().trim(), ownerTextField.getText().trim().toLowerCase(), jobCategoryTextField.getText().trim());
+		Settings.save(settings);
 		
-		notificationsUI.settingsChanged(settings);
+		listeners.stream().forEach(listener -> listener.onChange(settings));
 	}
 	
 	public void exit() {
 		hidePopup();
 	}
 	
-	public static void main(String[] args) {
-		SettingsPopupWindow ui = new SettingsPopupWindow(null);
-		ui.showPopup();
-	}
-
 	void showPopup() {
 		setVisible(true);
 	}
@@ -124,5 +126,9 @@ public class SettingsPopupWindow extends JFrame implements ActionListener {
 		if("exit".equals(event.getActionCommand())){
 			exit();
 		}
+	}
+
+	public void addSettingsUpdateListener(Settings.SettingsListener listener) {
+		listeners.add(listener);
 	}
 }

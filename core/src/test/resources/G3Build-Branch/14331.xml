@@ -1,7 +1,7 @@
 <workflowRun _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
 	<action _class='hudson.model.CauseAction'>
 		<cause _class='com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritCause'>
-			<shortDescription>Triggered by Gerrit: http://gerrit.ideasdev.int/12787</shortDescription>
+			<shortDescription>Triggered by Gerrit: http://gerrit.ideasdev.int/12537</shortDescription>
 		</cause>
 	</action>
 	<action/>
@@ -39,7 +39,7 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_HASH</name>
-			<value>12369972</value>
+			<value>-1245317758</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_BRANCH</name>
@@ -51,11 +51,11 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_NUMBER</name>
-			<value>12787</value>
+			<value>12537</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_ID</name>
-			<value>I8a4d1e8349ace590d95dcdd5610f4a2885d87db4</value>
+			<value>Ie7306fa6f3b17aa02975b7c2aec3de7cab4725b7</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_NUMBER</name>
@@ -63,11 +63,11 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_REVISION</name>
-			<value>92f5b5742b6cbca88d529372dbfaf7382bee3f3e</value>
+			<value>3f74d90dd79af6ece81dffdfe993ef5ba6252c2d</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_REFSPEC</name>
-			<value>refs/changes/87/12787/1</value>
+			<value>refs/changes/37/12537/1</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PROJECT</name>
@@ -75,51 +75,51 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_SUBJECT</name>
-			<value>Story-2</value>
+			<value>Story-1</value>
 		</parameter>
 		<parameter _class='com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.parameters.Base64EncodedStringParameterValue'>
 			<name>GERRIT_CHANGE_COMMIT_MESSAGE</name>
-			<value>VVMzMTk3NjogRXh0ZW5kZWQgU3RheSBEZW1hbmQgTWFuYWdlbWVudCAtIENyZWF0ZSBFeHRlbmRlZCBTdGF5IERlbWFuZCBNYW5hZ2VtZW50IHNwZWNpZmljIHRvZ2dsZQoKQ2hhbmdlLUlkOiBJOGE0ZDFlODM0OWFjZTU5MGQ5NWRjZGQ1NjEwZjRhMjg4NWQ4N2RiNAo=</value>
+			<value>VVMzMTc4NSA6IGRhdGFmZWVkcyByZWxhdGVkIHRvICdQcmljaW5nIFN0cmF0ZWd5JyBzaG91bGQgbm90IGJlIHNlbnQgd2hlbiBDUCBpcyBlbmFibGVkLgoKQ2hhbmdlLUlkOiBJZTczMDZmYTZmM2IxN2FhMDI5NzViN2MyYWVjM2RlN2NhYjQ3MjViNwo=</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_URL</name>
-			<value>http://gerrit.ideasdev.int/12787</value>
+			<value>http://gerrit.ideasdev.int/12537</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER</name>
-			<value>\"Developer Four\" &lt;developer.four@company.com&gt;</value>
+			<value>\"Developer Two\" &lt;developer.two@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER_NAME</name>
-			<value>Developer Four</value>
+			<value>Developer Two</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER_EMAIL</name>
-			<value>developer.four@company.com</value>
+			<value>developer.two@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER</name>
-			<value>\"Developer Four\" &lt;developer.four@company.com&gt;</value>
+			<value>\"Developer Two\" &lt;developer.two@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER_NAME</name>
-			<value>Developer Four</value>
+			<value>Developer Two</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER_EMAIL</name>
-			<value>developer.four@company.com</value>
+			<value>developer.two@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT</name>
-			<value>\"Developer Four\" &lt;developer.four@company.com&gt;</value>
+			<value>\"Developer Two\" &lt;developer.two@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT_NAME</name>
-			<value>Developer Four</value>
+			<value>Developer Two</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT_EMAIL</name>
-			<value>developer.four@company.com</value>
+			<value>developer.two@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_NAME</name>
@@ -153,29 +153,29 @@
 	<action _class='org.jenkinsci.plugins.workflow.cps.EnvActionImpl'/>
 	<action _class='hudson.plugins.git.util.BuildData'>
 		<buildsByBranchName>			
-			<refschanges4654461 _class='hudson.plugins.git.util.Build'>
-				<buildNumber>5603</buildNumber>
+			<refschanges3956391 _class='hudson.plugins.git.util.Build'>
+				<buildNumber>5890</buildNumber>
 				<marked>
-					<SHA1>9ca0aaf22ef4bc44620429d23e1b99339d5d0fe2</SHA1>
+					<SHA1>724e579a63a631410f58f35cca9e1737a719cf50</SHA1>
 					<branch>
-						<SHA1>9ca0aaf22ef4bc44620429d23e1b99339d5d0fe2</SHA1>
-						<name>refs/changes/46/5446/1</name>
+						<SHA1>724e579a63a631410f58f35cca9e1737a719cf50</SHA1>
+						<name>refs/changes/39/5639/1</name>
 					</branch>
 				</marked>
 				<revision>
-					<SHA1>9ca0aaf22ef4bc44620429d23e1b99339d5d0fe2</SHA1>
+					<SHA1>724e579a63a631410f58f35cca9e1737a719cf50</SHA1>
 					<branch>
-						<SHA1>9ca0aaf22ef4bc44620429d23e1b99339d5d0fe2</SHA1>
-						<name>refs/changes/46/5446/1</name>
+						<SHA1>724e579a63a631410f58f35cca9e1737a719cf50</SHA1>
+						<name>refs/changes/39/5639/1</name>
 					</branch>
 				</revision>
-			</refschanges4654461>			
+			</refschanges3956391>
 		</buildsByBranchName>
 		<lastBuiltRevision>
-			<SHA1>92f5b5742b6cbca88d529372dbfaf7382bee3f3e</SHA1>
+			<SHA1>3f74d90dd79af6ece81dffdfe993ef5ba6252c2d</SHA1>
 			<branch>
-				<SHA1>92f5b5742b6cbca88d529372dbfaf7382bee3f3e</SHA1>
-				<name>refs/changes/87/12787/1</name>
+				<SHA1>3f74d90dd79af6ece81dffdfe993ef5ba6252c2d</SHA1>
+				<name>refs/changes/37/12537/1</name>
 			</branch>
 		</lastBuiltRevision>
 		<remoteUrl>ssh://jenkins@gerrit.ideasdev.int:29418/Project-G3.git</remoteUrl>
@@ -184,9 +184,9 @@
 	<action _class='hudson.plugins.git.GitTagAction'/>
 	<action/>
 	<action _class='hudson.tasks.junit.TestResultAction'>
-		<failCount>0</failCount>
-		<skipCount>0</skipCount>
-		<totalCount>101</totalCount>
+		<failCount>3</failCount>
+		<skipCount>76</skipCount>
+		<totalCount>12554</totalCount>
 		<urlName>testReport</urlName>
 	</action>
 	<action/>
@@ -199,24 +199,24 @@
 	<action/>
 	<action/>
 	<building>false</building>
-	<description>Developer Four &lt;br&gt; 4.6.14672.92f5b57-Branch &lt;br&gt; mn4cbldcisw005 &lt;br&gt; mn4dg3xcitw004</description>
-	<displayName>#14672</displayName>
-	<duration>381990</duration>
-	<estimatedDuration>3420605</estimatedDuration>
-	<fullDisplayName>G3Build-Branch #14672</fullDisplayName>
-	<id>14672</id>
+	<description>Developer Two &lt;br&gt; 4.5.14331.3f74d90-Branch &lt;br&gt; mn4cbldcisw006 &lt;br&gt; mn4dg3xcitw006</description>
+	<displayName>#14331</displayName>
+	<duration>2319689</duration>
+	<estimatedDuration>4310205</estimatedDuration>
+	<fullDisplayName>G3Build-Branch #14331</fullDisplayName>
+	<id>14331</id>
 	<keepLog>false</keepLog>
-	<number>14672</number>
-	<queueId>3445</queueId>
+	<number>14331</number>
+	<queueId>34895</queueId>
 	<result>FAILURE</result>
-	<timestamp>1499975609372</timestamp>
-	<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14672/</url>
+	<timestamp>1499148315715</timestamp>
+	<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14331/</url>
 	<nextBuild>
-		<number>14673</number>
-		<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14673/</url>
+		<number>14332</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14332/</url>
 	</nextBuild>
 	<previousBuild>
-		<number>14671</number>
-		<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14671/</url>
+		<number>14330</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/job/G3Build-Branch/14330/</url>
 	</previousBuild>
 </workflowRun>

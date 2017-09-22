@@ -1,0 +1,222 @@
+
+<workflowRun _class='org.jenkinsci.plugins.workflow.job.WorkflowRun'>
+	<action _class='hudson.model.CauseAction'>
+		<cause _class='hudson.model.Cause$UpstreamCause'>
+			<shortDescription>Started by upstream project "G3Build-Branch" build number 16,389</shortDescription>
+			<upstreamBuild>16389</upstreamBuild>
+			<upstreamProject>G3Build-Branch</upstreamProject>
+			<upstreamUrl>job/G3Build-Branch/</upstreamUrl>
+		</cause>
+	</action>
+	<action _class='hudson.model.ParametersAction'>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>FQDN</name>
+			<value>mn4dg3xcitw003.ideasdev.int</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>Version</name>
+			<value>4.6.16389.4d5bfaf-Branch</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>GERRIT_REFSPEC</name>
+			<value>refs/changes/06/13006/7</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>G3Environment</name>
+			<value>G3Build-DeployG3</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>Version_old</name>
+			<value>4.6.9084.3153480</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>StopProcessing</name>
+			<value>false</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployDB</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeploySAS</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeploySandbox</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployLMS</name>
+			<value>false</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployOpenDS</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployOpenAM</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployJasper</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployWildFly</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>DeployApache</name>
+			<value>true</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>StartProcessing</name>
+			<value>false</value>
+		</parameter>
+		<parameter _class='hudson.model.BooleanParameterValue'>
+			<name>PullFromMaster</name>
+			<value>false</value>
+		</parameter>
+		<parameter _class='hudson.model.StringParameterValue'>
+			<name>NodeLabel</name>
+			<value>G3Deploy</value>
+		</parameter>
+	</action>
+	<action _class='com.cloudbees.plugins.deployer.DeployNowRunAction'>
+		<oneClickDeployPossible>false</oneClickDeployPossible>
+		<oneClickDeployReady>true</oneClickDeployReady>
+		<oneClickDeployValid>false</oneClickDeployValid>
+	</action>
+	<action _class='jenkins.metrics.impl.TimeInQueueAction'/>
+	<action/>
+	<action/>
+	<action _class='org.jenkinsci.plugins.workflow.cps.EnvActionImpl'/>
+	<action _class='hudson.plugins.git.util.BuildData'>
+		<buildsByBranchName>
+			<refschanges06130067 _class='hudson.plugins.git.util.Build'>
+				<buildNumber>16</buildNumber>
+				<marked>
+					<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+					<branch>
+						<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+						<name>refs/changes/06/13006/7</name>
+					</branch>
+				</marked>
+				<revision>
+					<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+					<branch>
+						<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+						<name>refs/changes/06/13006/7</name>
+					</branch>
+				</revision>
+			</refschanges06130067>
+			<refschanges06130065 _class='hudson.plugins.git.util.Build'>
+				<buildNumber>14</buildNumber>
+				<marked>
+					<SHA1>d77f8186fd135c35ed041c6ca82b8973ab779d85</SHA1>
+					<branch>
+						<SHA1>d77f8186fd135c35ed041c6ca82b8973ab779d85</SHA1>
+						<name>refs/changes/06/13006/5</name>
+					</branch>
+				</marked>
+				<revision>
+					<SHA1>d77f8186fd135c35ed041c6ca82b8973ab779d85</SHA1>
+					<branch>
+						<SHA1>d77f8186fd135c35ed041c6ca82b8973ab779d85</SHA1>
+						<name>refs/changes/06/13006/5</name>
+					</branch>
+				</revision>
+			</refschanges06130065>
+			<refschanges06130066 _class='hudson.plugins.git.util.Build'>
+				<buildNumber>15</buildNumber>
+				<marked>
+					<SHA1>e195418af637dee429e7662238e358e32f041918</SHA1>
+					<branch>
+						<SHA1>e195418af637dee429e7662238e358e32f041918</SHA1>
+						<name>refs/changes/06/13006/6</name>
+					</branch>
+				</marked>
+				<revision>
+					<SHA1>e195418af637dee429e7662238e358e32f041918</SHA1>
+					<branch>
+						<SHA1>e195418af637dee429e7662238e358e32f041918</SHA1>
+						<name>refs/changes/06/13006/6</name>
+					</branch>
+				</revision>
+			</refschanges06130066>
+		</buildsByBranchName>
+		<lastBuiltRevision>
+			<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+			<branch>
+				<SHA1>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</SHA1>
+				<name>refs/changes/06/13006/7</name>
+			</branch>
+		</lastBuiltRevision>
+		<remoteUrl>ssh://jenkins@gerrit.ideasdev.int:29418/Project-G3.git</remoteUrl>
+		<scmName/>
+	</action>
+	<action _class='hudson.plugins.git.GitTagAction'/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action/>
+	<action _class='org.jenkinsci.plugins.workflow.job.views.FlowGraphAction'/>
+	<action/>
+	<action/>
+	<building>false</building>
+	<description>Version: 4.6.16389.4d5bfaf-Branch</description>
+	<displayName>#16</displayName>
+	<duration>2287782</duration>
+	<estimatedDuration>2095137</estimatedDuration>
+	<fullDisplayName>G3Build-DeployG3 #16</fullDisplayName>
+	<id>16</id>
+	<keepLog>false</keepLog>
+	<number>16</number>
+	<queueId>19236</queueId>
+	<result>SUCCESS</result>
+	<timestamp>1502226768603</timestamp>
+	<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-DeployG3/16/</url>
+	<changeSet _class='hudson.plugins.git.GitChangeSetList'>
+		<item _class='hudson.plugins.git.GitChangeSet'>
+			<affectedPath>install/pipeline/src/main/groovy/ReleaseGit.groovy</affectedPath>
+			<affectedPath>install/pipeline/src/main/groovy/DeployGit.groovy</affectedPath>
+			<commitId>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</commitId>
+			<timestamp>1502222626000</timestamp>
+			<author>
+				<absoluteUrl>http://tools-jenkins.tetris.ideasdev.int/user/niglea</absoluteUrl>
+				<fullName>Nicholas Gleason</fullName>
+			</author>
+			<authorEmail>developer.three@company.com</authorEmail>
+			<comment>Ops: ReleaseGit deployG3 using DeployGit
+Change 1. Change ReleaseGit.groovy to deployG3 using DeployGit via a
+deployment job, G3Build-DeployG3.
+Why This will resolve our issue of DeployGit not being used in CI
+builds. At current, we use a seperate function defined in ReleaseGit to
+deployG3 for CI builds. As such, changes to DeployGit are never tested
+in CI builds. This is not a good practice as we require DeployGit to
+deploy code to all named environments. including Production.
+Change-Id: If78363d1bb7a6f16a217d8c98e4cf0a938e1f1da
+			</comment>
+			<date>2017-08-08 15:03:46 -0500</date>
+			<id>4d5bfaf4bcfbd7463711e081a0557f984019cdfb</id>
+			<msg>Ops: ReleaseGit deployG3 using DeployGit</msg>
+			<path>
+				<editType>edit</editType>
+				<file>install/pipeline/src/main/groovy/ReleaseGit.groovy</file>
+			</path>
+			<path>
+				<editType>edit</editType>
+				<file>install/pipeline/src/main/groovy/DeployGit.groovy</file>
+			</path>
+		</item>
+		<kind>git</kind>
+	</changeSet>
+	<previousBuild>
+		<number>15</number>
+		<url>http://tools-jenkins.tetris.ideasdev.int/view/G3/job/G3Build-DeployG3/15/</url>
+	</previousBuild>
+</workflowRun>

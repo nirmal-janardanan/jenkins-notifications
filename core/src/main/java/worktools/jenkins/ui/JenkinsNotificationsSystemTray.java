@@ -8,83 +8,86 @@ import java.awt.SystemTray;
 import java.awt.TrayIcon;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.swing.SwingUtilities;
 
-import worktools.jenkins.JenkinsService;
-import worktools.jenkins.JobKey;
-import worktools.jenkins.JobMetadata;
-import worktools.jenkins.ui.PreferencesHelper.Settings;
+import worktools.jenkins.AppConstants;
+import worktools.jenkins.models.JobMetadata;
+import worktools.jenkins.models.JobSearchKey;
+import worktools.jenkins.models.Settings;
+import worktools.jenkins.models.JobMetadata.Result;
+import worktools.jenkins.models.Settings.SettingsListener;
+import worktools.jenkins.services.CachedJenkinsDataService;
+import worktools.jenkins.services.JenkinsHttpDataService;
+import worktools.jenkins.services.JenkinsNotificationService;
+import worktools.jenkins.services.NotificationsListener;
+import worktools.jenkins.utils.Utils;
 
-public class JenkinsNotificationsSystemTray {
+public class JenkinsNotificationsSystemTray implements SettingsListener, NotificationsListener {
 	
-	private final JenkinsService jenkinsService;
+	private final JenkinsNotificationService jenkinsService;
 	private final SettingsPopupWindow settingsPopupWindow;
-	private TrayIcon trayIcon;
-	private volatile JobMetadata jobStatus;
-	private String owner;
-	private String ownerFirstName;
-	private String jobCategory;
 	
-	public JenkinsNotificationsSystemTray(JenkinsService jenkinsService, String owner, String jobCategory) {
+	private volatile JobSearchKey jobSearchKey;
+	private volatile JobMetadata jobStatus;
+	
+	private TrayIcon trayIcon;
+	
+	private static final String DEFAULT_IMAGE = "jenkins.png";
+	
+	public JenkinsNotificationsSystemTray(JenkinsNotificationService jenkinsService, JobSearchKey jobSearchKey) {
 		this.jenkinsService = jenkinsService;
-		this.owner = owner;
-		this.jobCategory = jobCategory;
-		parseFirstName();
-		this.jenkinsService.track(jobCategory);
-		this.settingsPopupWindow = new SettingsPopupWindow(this);
+		this.jobSearchKey = jobSearchKey;
+		this.settingsPopupWindow = new SettingsPopupWindow();
 	}
 
-	private void parseFirstName() {
-		this.ownerFirstName = owner.split("\\.")[0];
+	private void init() {
+		jenkinsService.trackAsync(jobSearchKey);
+		jenkinsService.addNotificationsListener(this);
+		settingsPopupWindow.addSettingsUpdateListener(this);
 	}
-	
+
 	public static void main(String[] args) throws AWTException {
-		
-//		JenkinsNotificationsSystemTray systemTray = new JenkinsNotificationsSystemTray(new JenkinsService(new MockJenkinsDataService()), owner);
-		Settings settings = PreferencesHelper.load();
-		String owner = settings.getOwner();
-		String jobCategory = settings.getJobCategory();
-		JenkinsNotificationsSystemTray systemTray = new JenkinsNotificationsSystemTray(new JenkinsService(), owner, jobCategory);
+		Settings settings = Settings.load();
+		JenkinsNotificationService jenkinsNotificationService = new JenkinsNotificationService(new CachedJenkinsDataService(new JenkinsHttpDataService()), AppConstants.POLLING_INTERVAL_IN_MILLI_SECONDS);
+		JenkinsNotificationsSystemTray systemTray = new JenkinsNotificationsSystemTray(jenkinsNotificationService, settings.toJobSearchKey());
+		systemTray.init();
 		SwingUtilities.invokeLater(systemTray::createGUI);
-		
-		ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
-		executor.scheduleAtFixedRate(() -> SwingUtilities.invokeLater(systemTray::refresh), 5, 15, TimeUnit.SECONDS);
 	}
 	
 	public void createGUI() {
 		PopupMenu popMenu = new PopupMenu();
+		createTrayIcon(popMenu);
+		popMenu.add(createExitButton());
+		popMenu.add(createSettingsButton());
+	}
+
+	private void createTrayIcon(PopupMenu popMenu) {
+		trayIcon = new TrayIcon(loadImage(DEFAULT_IMAGE), "Fetching Jobs", popMenu);
 		
-		MenuItem exitButtonItem = new MenuItem("Exit");
-		exitButtonItem.addActionListener((e) -> exit());
-		popMenu.add(exitButtonItem);
-		
-		
-		String defaultImage = "jenkins.png";
-		Image img = loadImage(defaultImage);
-		trayIcon = new TrayIcon(img, "Fetching Jobs", popMenu);
 		try {
 			SystemTray.getSystemTray().add(trayIcon);
 		} catch (AWTException e1) {
 			throw new RuntimeException(e1);
 		}
-		
-		
-		MenuItem settingsButtonItem = new MenuItem("Settings");
-		settingsButtonItem.addActionListener((e) -> showSettingsWindow());
-		popMenu.add(settingsButtonItem);
-		
-		SwingUtilities.invokeLater(this::refresh);  
 	}
 
-	private Image loadImage(String imageFileName) {
+	private MenuItem createExitButton() {
+		MenuItem exitButtonItem = new MenuItem("Exit");
+		exitButtonItem.addActionListener((e) -> exit());
+		return exitButtonItem;
+	}
+
+	private MenuItem createSettingsButton() {
+		MenuItem settingsButtonItem = new MenuItem("Settings");
+		settingsButtonItem.addActionListener((e) -> showSettingsWindow());
+		return settingsButtonItem;
+	}
+
+	Image loadImage(String imageFileName) {
 		URL resource = Thread.currentThread().getContextClassLoader().getResource("images/" + imageFileName);
 		try {
 			return ImageIO.read(resource);
@@ -92,76 +95,74 @@ public class JenkinsNotificationsSystemTray {
 			throw new RuntimeException("could not load image", e);
 		}
 	}
-	
-	void fetchImage(String imageName) {
-		
-	}
 
 	private void showSettingsWindow() {
 		settingsPopupWindow.showPopup();
 	}
 
-	void refresh() {
-		Optional<JobKey> jobKey = fetchJobKey();
-		if(jobKey.isPresent()){
-			JobMetadata jobStatus = jenkinsService.getJobStatus(jobKey.get());
-			SwingUtilities.invokeLater(() -> updateGUI(jobStatus));
-		} else {
-			SwingUtilities.invokeLater(() -> updateGUI(null));
-		}
-	}
-	
-	void settingsChanged(Settings settings) {
+	void updateGUI(JobMetadata jobStatus) {
 		
-		if(!Objects.equals(jobCategory, settings.getJobCategory())) {
-			System.out.println("Tracking : " + settings.getJobCategory());
-			jenkinsService.track(settings.getJobCategory());
-		}
+		blink();
+		updateTrayIconImage(jobStatus);
 		
-		this.jobCategory = settings.getJobCategory();
-		this.setOwner(settings.getOwner());
-		
-		refresh();
-	}
-	
-	public void updateGUI(JobMetadata jobStatus) {
-		
-		try {
-			String defaultImage = "jenkins.png";
-			Image img = loadImage(defaultImage);
-			trayIcon.setImage(img);
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-		}
-		
-		String imageFile = imageFile(jobStatus);
-		Image img = loadImage(imageFile);
-		trayIcon.setImage(img);
-		if(!Objects.equals(this.jobStatus, jobStatus)) {		
+		if(anyNews(jobStatus)) {		
 			displayNotification(jobStatus);
 		}
 		
-		trayIcon.setToolTip(createToolTipText(jobStatus));
+		updateToolTip(jobStatus);
 		this.jobStatus = jobStatus;
 	}
 
-	public String createToolTipText(JobMetadata jobStatus) {
-		if(jobStatus == null) {
-			return "No jobs for " + ownerFirstName + " in " + jobCategory;
+	private void blink() {
+		updateTrayIconImage(DEFAULT_IMAGE);
+		sleepQuietly(2);
+	}
+
+	private void sleepQuietly(int timeout) {
+		try {
+			TimeUnit.SECONDS.sleep(timeout);
+		} catch (InterruptedException e) {
 		}
-		String firstLine = String.format("%s : %s", jobStatus.getOwner(), jobStatus.getGerritComment());
+	}
+	
+	private boolean anyNews(JobMetadata jobStatus) {
+		return !Objects.equals(this.jobStatus, jobStatus);
+	}
+
+	private void updateTrayIconImage(JobMetadata jobStatus) {
+		updateTrayIconImage(imageFile(jobStatus));
+	}
+	
+	private void updateTrayIconImage(String imageFile) {
+		Image img = loadImage(imageFile);
+		trayIcon.setImage(img);
+	}
+	
+	private void updateToolTip(JobMetadata jobStatus) {
+		trayIcon.setToolTip(createToolTipText(jobStatus));
+	}
+
+	public String createToolTipText(JobMetadata jobStatus) {
+		if(jobStatus == null || jobStatus.getResult() == Result.UNKNOWN) {
+			return "No jobs for " + getOwnerFirstName() + " in " + jobSearchKey.getJobCategory();
+		}
+		
+		jobStatus.getBuildTime();
+		String msg = String.format("%s : %s", jobStatus.getOwner(), jobStatus.getGerritComment());
+		String firstLine = msg.substring(0, Math.min(75, msg.length()));
 		String secondLine = String.format("%s : %s", jobStatus.getJobCategory(), jobStatus.getJobId());
-		String toolTip = String.format("%s%n%s", firstLine.length() > 100 ? firstLine.substring(0, 100) : firstLine, secondLine);
-		return toolTip;
+		String thirdLine = String.format("Stage : %s. ", jobStatus.getBuildStage());
+		
+		return String.join("\n", firstLine, secondLine + ":  " + thirdLine);
 	}
 
 	public void displayNotification(JobMetadata jobStatus) {
 		String template = "%s : %s/%s = %s";
 		String text = null;
-		if(jobStatus == null) {
-			text = "No jobs for " + ownerFirstName + " in " + jobCategory;
+		if(jobStatus == null || jobStatus.getResult() == Result.UNKNOWN) {
+			text = "No jobs for " + getOwnerFirstName() + " in " + jobSearchKey.getJobCategory();
 		} else {
-			text = String.format(template, ownerFirstName, jobStatus.getJobCategory(), jobStatus.getJobId(), jobStatus.getResult());
+			text = String.format(template, getOwnerFirstName(), jobStatus.getJobCategory(), jobStatus.getJobId(), jobStatus.getResult());
 		}
 		trayIcon.displayMessage("Jenkins", text, TrayIcon.MessageType.INFO);
 	}
@@ -177,32 +178,41 @@ public class JenkinsNotificationsSystemTray {
 			case FAILURE:
 				return "failure.png";
 			case RUNNING:
-			case ABORTED:
 				return "running.png";
+			case ABORTED:
+			case UNKNOWN:
+				return "abandoned.png";
 			default:
 				throw new IllegalStateException("Dont have an icon image for - " + jobStatus.getResult());
 		}
-	}
-
-	private Optional<JobKey> fetchJobKey() {
-		List<JobMetadata> jobsByOwner = jenkinsService.getJobsByOwner(owner);
-		return jobsByOwner.stream()
-			.filter(jobMetadata -> Objects.equals(jobMetadata.getJobCategory(), jobCategory))
-			.findFirst()
-			.map(JobMetadata::getJobKey);
-
 	}
 
 	public void exit() {
 		System.exit(0);
 	}
 	
-	public void setOwner(String owner) {
-		this.owner = owner;
-		parseFirstName();
+	private String getOwnerFirstName() {
+		return this.jobSearchKey.getOwner().split("\\.")[0];
 	}
 	
-	public void setJobCategory(String jobCategory) {
-		this.jobCategory = jobCategory;
+	@Override
+	public void onChange(Settings settings) {
+		if(Objects.equals(jobSearchKey, settings.toJobSearchKey())) {
+			return;
+		}
+		
+		if(!Objects.equals(jobSearchKey, settings.toJobSearchKey())) {
+			Utils.log("Tracking : " + settings.getJobCategory());
+			jenkinsService.trackAsync(settings.toJobSearchKey());
+		}
+		
+		this.jobSearchKey = settings.toJobSearchKey();
+		
+	}
+
+	@Override
+	public void onUpdate(JobMetadata jobMetadata) {
+		Utils.log("Received job update - %s", jobMetadata);
+		SwingUtilities.invokeLater(() -> updateGUI(jobMetadata));
 	}
 }

@@ -1,8 +1,7 @@
-package worktools.jenkins;
+package worktools.jenkins.models;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 public class JobMetadata implements Serializable {
 
@@ -12,16 +11,28 @@ public class JobMetadata implements Serializable {
 	private final Result result;
 	private final String owner;
 	private final String gerritComment;
-	
-	public JobMetadata(JobKey jobKey, String buildStatus, String owner, String gerritComment) {
-		this(jobKey, Result.valueOf(buildStatus), owner, gerritComment);
+	private final String buildStage;
+	private final long buildTime;
+
+	public JobMetadata(JobKey jobKey, String buildStatus, String owner, String gerritComment, String buildStage, long buildTime) {
+		this(jobKey, Result.valueOf(buildStatus), owner, gerritComment, buildStage, 0);
 	}
 	
-	public JobMetadata(JobKey jobKey, Result result, String owner, String gerritComment) {
+	public JobMetadata(JobKey jobKey, Result result, String owner, String gerritComment, String buildStage, long duration) {
 		this.jobKey = jobKey;
 		this.result = result;
 		this.owner = owner;
 		this.gerritComment = gerritComment;
+		this.buildStage = buildStage;
+		this.buildTime = duration;
+	}
+	
+	public static JobMetadata empty() {
+		return empty(JobKey.empty());
+	}
+	
+	public static JobMetadata empty(JobKey jobKey) {
+		return new JobMetadata(jobKey, Result.UNKNOWN, "unknown owner", "no gerrit comments", null, 0);
 	}
 
 	public String getJobId() {
@@ -34,6 +45,10 @@ public class JobMetadata implements Serializable {
 	
 	public JobKey getJobKey() {
 		return jobKey;
+	}
+	
+	public String getBuildStage() {
+		return buildStage;
 	}
 
 	public Result getResult() {
@@ -48,25 +63,17 @@ public class JobMetadata implements Serializable {
 		return gerritComment;
 	}
 	
+	public long getBuildTime() {
+		return buildTime;
+	}
+	
 	public enum Result {
-		FAILURE("FAILURE"),
-		SUCCESS("SUCCESS"),
-		RUNNING("RUNNING"),
-		ABORTED("ABORTED"),
-		UNSTABLE("UNSTABLE");
-		
-		private final String name;
-
-		Result(String name) {
-			this.name = name;
-		}
-		
-		public static Result of(String name) {
-			return Stream.of(Result.values())
-				.filter(result -> result.name.equals(name))
-				.findFirst()
-				.orElseThrow(() -> new IllegalArgumentException("Invalid Result type - " + name));
-		}
+		FAILURE,
+		SUCCESS,
+		RUNNING,
+		ABORTED,
+		UNSTABLE,
+		UNKNOWN;
 	}
 
 	@Override
@@ -89,11 +96,14 @@ public class JobMetadata implements Serializable {
 			return false;
 		JobMetadata that = (JobMetadata) obj;
 		
-		return result == that.result && Objects.equals(jobKey, that.jobKey) && Objects.equals(owner, that.owner);
+		return result == that.result 
+				&& Objects.equals(jobKey, that.jobKey) 
+				&& Objects.equals(owner, that.owner)
+				&& Objects.equals(buildStage, that.buildStage);
 	}
 
 	@Override
 	public String toString() {
-		return String.format("JobMetadata [jobKey=%s, owner=%s, result=%s]", jobKey, owner, result);
+		return String.format("JobMetadata [jobKey=%s, owner=%s, result=%s, stage=%s]", jobKey, owner, result, buildStage);
 	}
 }
