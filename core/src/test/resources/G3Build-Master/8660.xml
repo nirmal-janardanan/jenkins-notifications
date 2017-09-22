@@ -81,8 +81,7 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_SUBJECT</name>
-			<value>US32123 : Develop a page to auto-validate the populated data
-				with history.xml from history extract</value>
+			<value>Story-3</value>
 		</parameter>
 		<parameter
 			_class='com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.parameters.Base64EncodedStringParameterValue'>
@@ -100,7 +99,7 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER</name>
-			<value>\"Developer Five\" &lt;developer.five@ideas.com&gt;</value>
+			<value>\"Developer Five\" &lt;developer.five@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER_NAME</name>
@@ -108,11 +107,11 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_CHANGE_OWNER_EMAIL</name>
-			<value>developer.five@ideas.com</value>
+			<value>developer.five@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER</name>
-			<value>\"Developer Five\" &lt;developer.five@ideas.com&gt;</value>
+			<value>\"Developer Five\" &lt;developer.five@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER_NAME</name>
@@ -120,11 +119,11 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_PATCHSET_UPLOADER_EMAIL</name>
-			<value>developer.five@ideas.com</value>
+			<value>developer.five@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT</name>
-			<value>\"Developer Five\" &lt;developer.five@ideas.com&gt;</value>
+			<value>\"Developer Five\" &lt;developer.five@company.com&gt;</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT_NAME</name>
@@ -132,7 +131,7 @@
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_EVENT_ACCOUNT_EMAIL</name>
-			<value>developer.five@ideas.com</value>
+			<value>developer.five@company.com</value>
 		</parameter>
 		<parameter _class='hudson.model.StringParameterValue'>
 			<name>GERRIT_NAME</name>
