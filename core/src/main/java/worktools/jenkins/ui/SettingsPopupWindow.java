@@ -26,6 +26,7 @@ public class SettingsPopupWindow extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 291100554956339935L;
 	private static final int WIDTH = 400;
 	private static final int HEIGHT = 100;
+	private static final int OFFSET = 50;
 	private final JTextField projectTextField = new JTextField();
 	private final JTextField ownerTextField = new JTextField();
 	private final JTextField jobCategoryTextField = new JTextField();
@@ -66,12 +67,16 @@ public class SettingsPopupWindow extends JFrame implements ActionListener {
 		
 		entryPanel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		add(entryPanel, BorderLayout.CENTER);
+		
+		projectTextField.setToolTipText("G3/NGI");
+		jobCategoryTextField.setToolTipText("G3Build-Branch/G3Build-Master/NGIBuild-Branch/NGIBuild-Master");
+		ownerTextField.setToolTipText("nirmal.janardanan@ideas.com");
 	}
 	
 	private void position() {
 		pack();
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		setLocation(new Point((int)screenSize.getWidth() - WIDTH - 50, (int)screenSize.getHeight() - HEIGHT - 50));
+		setLocation(new Point((int)screenSize.getWidth() - WIDTH - OFFSET, (int)screenSize.getHeight() - HEIGHT - OFFSET));
 		this.setAlwaysOnTop(true);
 	}
 

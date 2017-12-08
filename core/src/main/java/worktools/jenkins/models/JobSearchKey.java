@@ -55,4 +55,8 @@ public class JobSearchKey {
 		return String.format("%s, %s, %s", project, jobCategory, owner);
 	}
 
+	public String getOwnerFirstName() {
+		return getOwner().split("\\.")[0];
+	}
+
 }

@@ -210,6 +210,6 @@ public class CachedJenkinsDataServiceTest {
 		verify(dataService ).fetchJobData(JOB_KEY_1);				// 1 time
 		verify(dataService ).fetchJobData(JOB_KEY_2);				// 1 time
 		verify(dataService, times(2)).fetchJobData(JOB_KEY_3);		// 2 times
-	}	
+	}
 }
 

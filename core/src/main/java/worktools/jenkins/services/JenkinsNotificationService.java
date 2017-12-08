@@ -15,7 +15,7 @@ import worktools.jenkins.utils.Utils;
 public class JenkinsNotificationService {
 
 	private final JenkinsDataService dataService;
-	private final Set<NotificationsListener> listeners = new CopyOnWriteArraySet<>();
+	final Set<NotificationsListener> listeners = new CopyOnWriteArraySet<>();
 	
 	private final ScheduledExecutorService scheduler;
 	
@@ -44,7 +44,7 @@ public class JenkinsNotificationService {
 	}
 
 	public void addNotificationsListener(NotificationsListener listener) {
-		listeners.add(listener);
+		listener.addNotificationsListener(this);
 	}
 	
 	private void notifyListeners(JobMetadata jobMetadata) {
@@ -58,8 +58,7 @@ public class JenkinsNotificationService {
 	}
 	
 	private void registerShutdownHook() {
-		Thread shutdownSchedulerTask = new Thread(() -> this.scheduler.shutdown());
-		Runtime.getRuntime().addShutdownHook(shutdownSchedulerTask);
+		jobPolling.registerShutdownHook(this);
 	}
 	
 	static class JobPolling {
@@ -98,7 +97,6 @@ public class JenkinsNotificationService {
 		}
 		
 		private void fetchJobAndNotify(JobSearchKey jobSearchKey) {
-			Utils.log("Fetching details for: " + jobSearchKey);
 			try {
 				JobMetadata jobMetadata = notificationService.fetch(jobSearchKey);
 				notificationService.notifyListeners(jobMetadata);
@@ -109,6 +107,11 @@ public class JenkinsNotificationService {
 		
 		public void stopTracking() {
 			pollingTask.cancel(true);
+		}
+
+		void registerShutdownHook(JenkinsNotificationService jenkinsNotificationService) {
+			Thread shutdownSchedulerTask = new Thread(() -> jenkinsNotificationService.scheduler.shutdown());
+			Runtime.getRuntime().addShutdownHook(shutdownSchedulerTask);
 		}
 	}
 }

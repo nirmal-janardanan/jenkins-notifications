@@ -139,15 +139,22 @@ public class JenkinsNotificationsSystemTray implements SettingsListener, Notific
 	}
 	
 	private void updateToolTip(JobMetadata jobStatus) {
-		trayIcon.setToolTip(createToolTipText(jobStatus));
+		trayIcon.setToolTip(createToolTipText(jobStatus, jobSearchKey.getJobCategory(), jobSearchKey.getOwnerFirstName()));
 	}
 
 	public String createToolTipText(JobMetadata jobStatus) {
+		return createToolTipText(jobStatus, jobSearchKey.getJobCategory(), jobSearchKey.getOwnerFirstName());
+	}
+
+	public String createToolTipText(JobMetadata jobStatus, String jobCategory) {
+		return createToolTipText(jobStatus, jobCategory, jobSearchKey.getOwnerFirstName());
+	}
+
+	public String createToolTipText(JobMetadata jobStatus, String jobCategory, String ownerFirstName) {
 		if(jobStatus == null || jobStatus.getResult() == Result.UNKNOWN) {
-			return "No jobs for " + getOwnerFirstName() + " in " + jobSearchKey.getJobCategory();
+			return "No jobs for " + ownerFirstName + " in " + jobCategory;
 		}
 		
-		jobStatus.getBuildTime();
 		String msg = String.format("%s : %s", jobStatus.getOwner(), jobStatus.getGerritComment());
 		String firstLine = msg.substring(0, Math.min(75, msg.length()));
 		String secondLine = String.format("%s : %s", jobStatus.getJobCategory(), jobStatus.getJobId());
@@ -160,9 +167,9 @@ public class JenkinsNotificationsSystemTray implements SettingsListener, Notific
 		String template = "%s : %s/%s = %s";
 		String text = null;
 		if(jobStatus == null || jobStatus.getResult() == Result.UNKNOWN) {
-			text = "No jobs for " + getOwnerFirstName() + " in " + jobSearchKey.getJobCategory();
+			text = "No jobs for " + jobSearchKey.getOwnerFirstName() + " in " + jobSearchKey.getJobCategory();
 		} else {
-			text = String.format(template, getOwnerFirstName(), jobStatus.getJobCategory(), jobStatus.getJobId(), jobStatus.getResult());
+			text = String.format(template, jobSearchKey.getOwnerFirstName(), jobStatus.getJobCategory(), jobStatus.getJobId(), jobStatus.getResult());
 		}
 		trayIcon.displayMessage("Jenkins", text, TrayIcon.MessageType.INFO);
 	}
@@ -191,10 +198,6 @@ public class JenkinsNotificationsSystemTray implements SettingsListener, Notific
 		System.exit(0);
 	}
 	
-	private String getOwnerFirstName() {
-		return this.jobSearchKey.getOwner().split("\\.")[0];
-	}
-	
 	@Override
 	public void onChange(Settings settings) {
 		if(Objects.equals(jobSearchKey, settings.toJobSearchKey())) {
@@ -205,9 +208,7 @@ public class JenkinsNotificationsSystemTray implements SettingsListener, Notific
 			Utils.log("Tracking : " + settings.getJobCategory());
 			jenkinsService.trackAsync(settings.toJobSearchKey());
 		}
-		
 		this.jobSearchKey = settings.toJobSearchKey();
-		
 	}
 
 	@Override
