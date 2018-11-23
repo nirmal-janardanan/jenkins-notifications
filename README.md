@@ -1,4 +1,4 @@
-# jenkins-notifications
+# jenkins-notifications!
 
 How to run?
 
